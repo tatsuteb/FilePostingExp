@@ -1,0 +1,19 @@
+﻿@model FilePostingExp.ViewModel.UserRegistrationViewModel
+@{
+}
+
+<h1>Registration Complete</h1>
+
+<dl>
+    <dd>User Name</dd>
+    <dt>@Model.UserName</dt>
+
+<!--	Show ThumbnailFile name if Model.ThumbnailFile object is not null.-->
+    @if(Model.ThumbnailFile != null)
+    {
+    <dd>Thumbnail File</dd>
+    <dt>    
+        @Model.ThumbnailFile.FileName
+    </dt>
+    }
+</dl>

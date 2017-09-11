@@ -1,0 +1,25 @@
+﻿@model FilePostingExp.ViewModel.UserRegistrationViewModel
+@{
+}
+
+<h1>Confirm</h1>
+
+<dl>
+    <dd>User Name</dd>
+    <dt>@Model.UserName</dt>
+
+    <dd>Thumbnail File</dd>
+    <dt>@Model.ThumbnailFile.FileName</dt>
+</dl>
+
+
+@using (Html.BeginForm("ExecRegistration", "User", FormMethod.Post, new { enctype="multipart/form-data"}))
+{
+
+@Html.HiddenFor(model => model.UserName, @Model.UserName)
+
+@Html.HiddenFor(model => model.ThumbnailFile, @Model.ThumbnailFile)
+
+<input type="submit" value="Regist" />
+
+}

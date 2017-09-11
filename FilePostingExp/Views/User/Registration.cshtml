@@ -1,0 +1,20 @@
+﻿@model FilePostingExp.ViewModel.UserRegistrationViewModel
+@{
+}
+
+<h1>Registration</h1>
+
+@using (Html.BeginForm("Confirm", "User", FormMethod.Post, new { enctype="multipart/form-data"}))
+{
+
+<dl>
+	<dd>@Html.LabelFor(model => model.UserName)</dd>
+	<dt>@Html.TextBoxFor(model => model.UserName)</dt>
+
+	<dd>@Html.LabelFor(model => model.ThumbnailFile)</dd>
+	<dt>@Html.TextBoxFor(model => model.ThumbnailFile, new { type="file" })</dt>
+</dl>
+
+<input type="submit" value="Confirm" />
+
+}
