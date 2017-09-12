@@ -4,17 +4,20 @@
 
 <h1>Registration</h1>
 
-@using (Html.BeginForm("Confirm", "User", FormMethod.Post, new { enctype="multipart/form-data"}))
+@using (Html.BeginForm("Confirm", "User", FormMethod.Post, new { @enctype="multipart/form-data", @class="form-horizontal"}))
 {
 
-<dl>
-	<dd>@Html.LabelFor(model => model.UserName)</dd>
-	<dt>@Html.TextBoxFor(model => model.UserName)</dt>
+<dl class="form-group">
+	<dd>@Html.LabelFor(model => model.UserName, new { @class="col-md-2 control-label" })</dd>
+	<dt class="col-md-10">@Html.TextBoxFor(model => model.UserName, new { @class="form-control" })</dt>
 
-	<dd>@Html.LabelFor(model => model.ThumbnailFile)</dd>
-	<dt>@Html.TextBoxFor(model => model.ThumbnailFile, new { type="file" })</dt>
+	<dd>@Html.LabelFor(model => model.ThumbnailFile, new { @class="col-md-2 control-label" })</dd>
+	<dt class="col-md-10">@Html.TextBoxFor(model => model.ThumbnailFile, new { @type="file" })</dt>
 </dl>
 
-<input type="submit" value="Confirm" />
-
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <button type="submit" class="btn btn-default">Confirm</button>
+    </div>
+</div>
 }
